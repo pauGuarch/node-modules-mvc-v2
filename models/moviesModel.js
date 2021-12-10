@@ -1,8 +1,16 @@
-import movies from '../data/movies.js';
+//import movies from '../data/movies.js';
+import movies from '../managers/manager-fs.js';
 
 class MoviesModel {
-    getMovies() {
-        return movies;
+    getMovies(data1, data2) {
+        // data.toString();
+        // data = String(data);
+        let arr = [];
+        arr.push(movies(data1));
+        arr.push(movies(data2).flat());
+        return arr.flat();
+        return arr;
+        //return movies(data1);
     }
     getMovieById(id) {
         return movies.find(element => element.id == id);

@@ -5,10 +5,13 @@ import {new_movie_update} from './data/newMovie.js';
 
 //CRUD
 // Create / Read / Update / Delete
+let data = './data/movies.json';
+let data1 = './data/movies1.json';
+let data2 = './data/movies2.json';
 
-let allMovies = function (data_movie) {
-        moviesController.getAllMovies(data_movie);
-        data_movie.res.forEach((e) => console.log(e));
+let allMovies = function (data_movie, data1, data2) {
+        moviesController.getAllMovies(data_movie, data1, data2);
+        //data_movie.res.forEach((e) => console.log(e));
  }
 
 
@@ -42,26 +45,26 @@ let getMovieBy = function(data_movie){
 try {
 
     // Película con id:2
-    data_movie.req={id:2};
-    getMovieId(data_movie);
+    //data_movie.req={id:2};
+    //getMovieId(data_movie);
 
     // Eliminar la película con id:2
-    removeMovie(data_movie);
+    //removeMovie(data_movie);
 
     // Añade una nueva película
-    data_movie.req= new_movie;
-    createMovie(data_movie);
+    //data_movie.req= new_movie;
+    //createMovie(data_movie);
 
     // Modifica la película con id:10
-    data_movie.req= new_movie_update;
-    updateMovie(data_movie);
+    //data_movie.req= new_movie_update;
+    //updateMovie(data_movie);
 
     //Devuelve todas las peliculas
-    allMovies(data_movie);
+    allMovies(data_movie, data1, data2);
 
     //Todas las peliculas del año 1994
-    data_movie.req={key:"year", value: 1994};
-    getMovieBy(data_movie);
+    //data_movie.req={key:"year", value: 1994};
+    //getMovieBy(data_movie);
     
    
 } catch (error) {
